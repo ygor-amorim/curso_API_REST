@@ -11,6 +11,14 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-console": "off"
+        "no-console": "off",
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "arrow-body-style": [
+            "off",
+            "as-needed"
+        ]
     }
 }
