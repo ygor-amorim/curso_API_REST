@@ -7,7 +7,7 @@
     "start": "node src/server.js",
     "test": "jest",
     "lint": "eslint src/** test/** --fix",
-    "secure-mode": "jest --watch --verbose=true",
+    "secure-mode": "jest --watch --detectOpenHandles --verbose=true",
     "knex-migrate-latest-env-test": "knex migrate:latest --env test",
     "knex-migrate-rollback-env-test": "knex migrate:rollback --env test"
   },
@@ -34,6 +34,7 @@
     "consign": "0.1.6",
     "express": "4.16.4",
     "knex": "0.21.5",
+    "knex-logger": "^0.1.0",
     "pg": "8.3.3"
   }
 }
