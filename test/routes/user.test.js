@@ -19,3 +19,30 @@ test('Deve inserir usuário com sucesso', () => {
       expect(res.body.name).toBe('Jane Doe');
     });
 });
+
+test('Não deve inserir usuário sem nome', () => {
+  request(app).post('/users')
+    .send({ mail: 'janedoetest@mail.com', passwd: '123456' })
+    .then((res) => {
+      expect(res.status).toBe(400);
+      expect(res.body.error).toStrictEqual('Nome é atributo obrigatório');
+    });
+});
+
+test('Não deve inserir usuário sem e-mail', async () => {
+  const result = await request(app).post('/users')
+    .send({ name: 'Jane Doe', passwd: '123456' });
+  expect(result.status).toBe(400);
+  expect(result.body.error).toBe('E-mail é um atributo obrigatório');
+});
+
+test('Não deve inserir usuário sem senha', (done) => {
+  request(app).post('/users')
+    .send({ name: 'Jane Doe', mail: 'janedoe@mail.com' })
+    .then((res) => {
+      expect(res.status).toBe(400);
+      expect(res.body.error).toBe('Senha é um atributo obrigatório');
+      done();
+    })
+    .catch((err) => done.fail(err));
+});
