@@ -9,7 +9,7 @@
     "lint": "eslint src/** test/** --fix",
     "secure-mode": "jest --watch --detectOpenHandles --verbose=true",
     "knex-migrate-latest-env-test": "knex migrate:latest --env test",
-    "knex-migrate-rollback-env-test": "knex migrate:rollback --env test"
+    "knex-migrate-rollback": "knex migrate:rollback --env test"
   },
   "repository": {
     "type": "git",
@@ -34,8 +34,8 @@
     "body-parser": "1.18.3",
     "consign": "0.1.6",
     "express": "4.16.4",
-    "knex": "0.21.5",
+    "knex": "^0.21.5",
     "knex-logger": "^0.1.0",
-    "pg": "8.3.3"
+    "pg": "^8.3.3"
   }
 }
