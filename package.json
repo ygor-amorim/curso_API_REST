@@ -35,6 +35,7 @@
     "body-parser": "1.18.3",
     "consign": "0.1.6",
     "express": "4.16.4",
+    "jwt-simple": "0.5.5",
     "knex": "^0.21.5",
     "knex-logger": "^0.1.0",
     "pg": "^8.3.3"
