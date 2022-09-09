@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@types/jest": "^28.1.8",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "1.18.3",
     "consign": "0.1.6",
     "express": "4.16.4",
