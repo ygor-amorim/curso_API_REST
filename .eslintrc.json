@@ -11,6 +11,7 @@
         "sourceType": "module"
     },
     "rules": {
+        "object-curly-newline": "off",
         "no-console": "off",
         "linebreak-style": [
             "error",
