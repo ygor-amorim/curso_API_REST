@@ -8,9 +8,7 @@ module.exports = {
       password: 'H38PEJRSMp',
       database: 'barriga',
     },
-    migrations: {
-      directory: 'src/migrations',
-    },
-
+    migrations: { directory: 'src/migrations' },
+    seeds: { directory: 'src/seeds' },
   },
 };
