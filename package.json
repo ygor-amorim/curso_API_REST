@@ -7,7 +7,7 @@
     "start": "node src/server.js",
     "test": "jest",
     "lint": "eslint src/** test/** --fix",
-    "secure-mode": "jest --watch --detectOpenHandles --verbose=true",
+    "secure-mode": "jest --watch --coverage --detectOpenHandles --runInBand --verbose=true",
     "knex-migrate-latest-env-test": "knex migrate:latest --env test",
     "knex-migrate-rollback": "knex migrate:rollback --env test"
   },
@@ -38,6 +38,7 @@
     "jwt-simple": "0.5.5",
     "knex": "^0.21.21",
     "knex-logger": "^0.1.0",
+    "moment": "2.22.2",
     "passport": "0.4.0",
     "passport-jwt": "4.0.0",
     "pg": "^8.3.3"

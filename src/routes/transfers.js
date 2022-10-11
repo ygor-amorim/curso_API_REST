@@ -1,21 +1,21 @@
 const express = require('express');
-// const RecursoIndevidoError = require('../errors/RecursoIndevidoError');
+const RecursoIndevidoError = require('../errors/RecursoIndevidoError');
 
 module.exports = (app) => {
   const router = express.Router();
 
   // Código que quebra os testes
-  // router.param('id', (req, res, next) => {
-  //   app.services.transfer.findOne({ id: req.params.id })
-  //     .then((result) => {
-  //       console.log(result.user_id);
-  //       console.log(req.user.id);
-  //       if (result.user_id !== req.user.id) {
-  //         throw new RecursoIndevidoError();
-  //       }
-  //       next();
-  //     }).catch((err) => next(err));
-  // });
+  router.param('id', (req, res, next) => {
+    app.services.transfer.findOne({ id: req.params.id })
+      .then((result) => {
+        console.log(result.user_id);
+        console.log(req.user.id);
+        if (result.user_id !== req.user.id) {
+          throw new RecursoIndevidoError();
+        }
+        next();
+      }).catch((err) => next(err));
+  });
 
   const validate = (req, res, next) => {
     app.services.transfer.validate({ ...req.body, user_id: req.user.id })

@@ -5,8 +5,8 @@ const MAIN_ROUTE = '/v1/transfers';
 const TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMDAwIiwibmFtZSI6IlVzZXIgIzEiLCJtYWlsIjoidXNlcjFAbWFpbC5jb20ifQ.pbgXqKq_3xugkQM-FCQZsTpIGpY_3ngMU_Nj0PrDVAc';
 
 beforeAll(async () => {
-  await app.db.migrate.rollback();
-  await app.db.migrate.latest();
+  // await app.db.migrate.rollback();
+  // await app.db.migrate.latest();
   await app.db.seed.run();
 });
 
